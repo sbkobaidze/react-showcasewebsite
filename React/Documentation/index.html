@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Stroyka</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i" rel="stylesheet">
+
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="vendor/highlight.js-9.15.6/styles/github-gist.css">
+
+    <!-- js -->
+    <script src="vendor/highlight.js-9.15.6/highlight.pack.js"></script>
+    <script src="js/index.js"></script>
+</head>
+<body>
+<div class="docs-markup">
+    <div class="docs-header">
+        <button type="button" class="docs-header__menu">Menu</button>
+    </div>
+    <nav class="docs-nav">
+        <div class="docs-nav__logo">
+            <a href="" target="_blank">
+                <svg class="docs-logo" xmlns="http://www.w3.org/2000/svg" width="120px" height="20px">
+                    <path d="M118.5,20h-1.1c-0.6,0-1.2-0.4-1.4-1l-1.5-4h-6.1l-1.5,4c-0.2,0.6-0.8,1-1.4,1h-1.1c-1,0-1.8-1-1.4-2l1.1-3
+                             l1.5-4l3.6-10c0.2-0.6,0.8-1,1.4-1h1.6c0.6,0,1.2,0.4,1.4,1l3.6,10l1.5,4l1.1,3C120.3,19,119.5,20,118.5,20z M111.5,6.6l-1.6,4.4
+                             h3.2L111.5,6.6z M99.5,20h-1.4c-0.4,0-0.7-0.2-0.9-0.5L94,14l-2,3.5v1c0,0.8-0.7,1.5-1.5,1.5h-1c-0.8,0-1.5-0.7-1.5-1.5v-17
+                             C88,0.7,88.7,0,89.5,0h1C91.3,0,92,0.7,92,1.5v8L94,6l3.2-5.5C97.4,0.2,97.7,0,98.1,0h1.4c1.2,0,1.9,1.3,1.3,2.3L96.3,10l4.5,7.8
+                             C101.4,18.8,100.7,20,99.5,20z M80.3,11.8L80,12.3v6.2c0,0.8-0.7,1.5-1.5,1.5h-1c-0.8,0-1.5-0.7-1.5-1.5v-6.2l-0.3-0.5l-5.5-9.5
+                             c-0.6-1,0.2-2.3,1.3-2.3h1.4c0.4,0,0.7,0.2,0.9,0.5L76,4.3l2,3.5l2-3.5l2.2-3.8C82.4,0.2,82.7,0,83.1,0h1.4c1.2,0,1.9,1.3,1.3,2.3
+                             L80.3,11.8z M60,20c-5.5,0-10-4.5-10-10S54.5,0,60,0s10,4.5,10,10S65.5,20,60,20z M60,4c-3.3,0-6,2.7-6,6s2.7,6,6,6s6-2.7,6-6
+                             S63.3,4,60,4z M47.8,17.8c0.6,1-0.2,2.3-1.3,2.3h-2L41,14h-4v4.5c0,0.8-0.7,1.5-1.5,1.5h-1c-0.8,0-1.5-0.7-1.5-1.5v-17
+                             C33,0.7,33.7,0,34.5,0H41c0.3,0,0.7,0,1,0.1c3.4,0.5,6,3.4,6,6.9c0,2.4-1.2,4.5-3.1,5.8L47.8,17.8z M42,4.2C41.7,4.1,41.3,4,41,4h-3
+                             c-0.6,0-1,0.4-1,1v4c0,0.6,0.4,1,1,1h3c0.3,0,0.7-0.1,1-0.2c0.3-0.1,0.6-0.3,0.9-0.5C43.6,8.8,44,7.9,44,7C44,5.7,43.2,4.6,42,4.2z
+                              M29.5,4H25v14.5c0,0.8-0.7,1.5-1.5,1.5h-1c-0.8,0-1.5-0.7-1.5-1.5V4h-4.5C15.7,4,15,3.3,15,2.5v-1C15,0.7,15.7,0,16.5,0h13
+                             C30.3,0,31,0.7,31,1.5v1C31,3.3,30.3,4,29.5,4z M6.5,20c-2.8,0-5.5-1.7-6.4-4c-0.4-1,0.3-2,1.3-2h1c0.5,0,0.9,0.3,1.2,0.7
+                             c0.2,0.3,0.4,0.6,0.8,0.8C4.9,15.8,5.8,16,6.5,16c1.5,0,2.8-0.9,2.8-2c0-0.7-0.5-1.3-1.2-1.6C7.4,12,7,11,7.4,10.3l0.4-0.9
+                             c0.4-0.7,1.2-1,1.8-0.6c0.6,0.3,1.2,0.7,1.6,1.2c1,1.1,1.7,2.5,1.7,4C13,17.3,10.1,20,6.5,20z M11.6,6h-1c-0.5,0-0.9-0.3-1.2-0.7
+                             C9.2,4.9,8.9,4.7,8.6,4.5C8.1,4.2,7.2,4,6.5,4C5,4,3.7,4.9,3.7,6c0,0.7,0.5,1.3,1.2,1.6C5.6,8,6,9,5.6,9.7l-0.4,0.9
+                             c-0.4,0.7-1.2,1-1.8,0.6c-0.6-0.3-1.2-0.7-1.6-1.2C0.6,8.9,0,7.5,0,6c0-3.3,2.9-6,6.5-6c2.8,0,5.5,1.7,6.4,4C13.3,4.9,12.6,6,11.6,6
+                             z"></path>
+                </svg>
+            </a>
+        </div>
+
+        <ul class="docs-nav__links">
+            
+                <li>
+                    <a class="docs-nav__link" href="#section-home">
+                        Introduction
+                    </a>
+                </li>
+            
+                <li>
+                    <a class="docs-nav__link" href="#section-features">
+                        Features
+                    </a>
+                </li>
+            
+                <li>
+                    <a class="docs-nav__link" href="#section-getting-started">
+                        Getting Started
+                    </a>
+                </li>
+            
+                <li>
+                    <a class="docs-nav__link" href="#section-project-structure">
+                        Project Structure
+                    </a>
+                </li>
+            
+                <li>
+                    <a class="docs-nav__link" href="#section-customization">
+                        Customization
+                    </a>
+                </li>
+            
+                <li>
+                    <a class="docs-nav__link" href="#section-third-party-modules">
+                        Third-Party Packages
+                    </a>
+                </li>
+            
+                <li>
+                    <a class="docs-nav__link" href="#section-scss-files">
+                        SCSS Files
+                    </a>
+                </li>
+            
+                <li>
+                    <a class="docs-nav__link" href="#section-ltr-rtl">
+                        LTR/RTL
+                    </a>
+                </li>
+            
+                <li>
+                    <a class="docs-nav__link" href="#section-svg">
+                        SVG
+                    </a>
+                </li>
+            
+                <li>
+                    <a class="docs-nav__link" href="#section-fonts">
+                        Fonts
+                    </a>
+                </li>
+            
+                <li>
+                    <a class="docs-nav__link" href="#section-changelog">
+                        Changelog
+                    </a>
+                </li>
+            
+                <li>
+                    <a class="docs-nav__link" href="#section-credits">
+                        Credits
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <div class="docs-nav-backdrop"></div>
+    <div class="docs-content">
+        
+            <section class="docs-section" id="section-home">
+                <h1 class="docs-section__title">Stroyka</h1>
+
+                <div class="docs-typography">
+<p>Thank you for purchasing my theme. If you have any questions that are beyond the scope of this help file, please feel free to email via my
+user page contact form <a href="https://themeforest.net/user/kos9">here</a>. Thanks so much!</p>
+
+
+</div>
+            </section>
+        
+            <section class="docs-section" id="section-features">
+                <h1 class="docs-section__title">Features</h1>
+
+                <div class="docs-typography">
+    <ul>
+<li>100% Responsive Layout</li>
+<li>LTR/RTL supported</li>
+<li>HTML5 and CSS3</li>
+<li>Bootstrap 4</li>
+<li>SASS</li>
+<li>CSS3 Animation</li>
+<li>SVG Icons</li>
+<li>Font Awesome Icons</li>
+<li>BEM syntax</li>
+<li>Roboto Google Font</li>
+<li>Compatible with all major browsers</li>
+<li>Grid / List products view</li>
+<li>Quickview</li>
+<li>2 Variants of the home page</li>
+<li>3 Variants of the product page</li>
+<li>3 Variants of the blog page layout</li>
+<li>2 Variants of the post page layout</li>
+<li><strong>PhotoSwipe</strong> gallery on the product page</li>
+<li><strong>Off canvas</strong> filters</li>
+<li><strong>Search suggestions</strong></li>
+</ul>
+
+
+</div>
+
+            </section>
+        
+            <section class="docs-section" id="section-getting-started">
+                <h1 class="docs-section__title">Getting Started</h1>
+
+                <div class="docs-typography">
+    <h2 id="preparation">Preparation</h2>
+<ol>
+<li>Make sure your system has installed <a href="https://nodejs.org">Node.js</a> and <a href="https://yarnpkg.com/">Yarn</a>.</li>
+<li>Open a terminal window and go to the <code>React/Sources</code> directory.</li>
+<li>Run the <code>yarn install</code> command. This command will load all necessary dependencies specified in the <code>package.json</code> file.</li>
+</ol>
+<h2 id="build-project">Build Project</h2>
+<p>To start a local HTTP server and runs the build process with change tracking run the command:</p>
+<pre><code class="language-text">npm start</code></pre>
+<p>To build for production, run the command:</p>
+<pre><code class="language-text">npm run build</code></pre>
+<p>After executing the command, the compiled project will be located in the <code>build</code> directory.</p>
+<p>You can find more information about the available commands in the
+official React <a href="https://facebook.github.io/create-react-app/docs/available-scripts" target="_blank">documentation</a>.</p>
+
+
+</div>
+
+            </section>
+        
+            <section class="docs-section" id="section-project-structure">
+                <h1 class="docs-section__title">Project Structure</h1>
+
+                <div class="docs-typography">
+
+    <p>Project source codes are in the <code>Sources</code> directory.
+After downloading and unpacking the package, the <code>Sources</code> directory will look like this:</p>
+<pre><code class="language-text">Sources/
+    public/
+        images/
+        favicon.ico
+        index.html
+        manifest.json
+    src/
+        api/
+        components/
+        data/
+        fake-server/
+        i18n/
+        scss/
+        services/
+        store/
+        svg/
+        index.js
+        photoswipe.js
+        serviceWorker.js
+    .editorconfig
+    .eslintrc.js
+    .gitignore
+    package.json
+    README.md
+    yarn.lock</code></pre>
+<p>Here is a description of the most important files and directories of the project:</p>
+<ul>
+<li><code>Sources/src/api/</code> - Contains functions that fetch data from the server.
+You need to replace calls to the fake server with real AJAX requests.</li>
+<li><code>Sources/src/components/</code> - Contains components used in the template. More details below.</li>
+<li><code>Sources/src/data/</code> - Contains stubs data for the template, products, categories, etc.</li>
+<li><code>Sources/src/fake-server/</code> - Contains fake server code. Used for demonstration purposes only.
+After you replace calls to the fake server with real AJAX requests, you can delete this directory.</li>
+<li><code>Sources/src/i18n/</code> - Files related to localization.</li>
+<li><code>Sources/src/scss/</code> - Contains project styles. More details are described in the <strong>SCSS Files</strong> section.</li>
+<li><code>Sources/src/services/</code> - Contains some useful functions and classes that are used in the template.</li>
+<li><code>Sources/src/store/</code> - Files related to React Redux: actions, reducers, .etc. More details below.</li>
+<li><code>Sources/src/svg/</code> - Contains separate SVG files.</li>
+</ul>
+<h2 id="components-directory">Components directory</h2>
+<p><code>Sources/src/components</code> is a main directory with the following structure:</p>
+<pre><code class="language-text">components/
+    account/
+    blocks/
+    blog/
+    filters/
+    footer/
+    header/
+    home/
+    mobile/
+    shared/
+    shop/
+    site/
+    widgets/
+    Layout.jsx
+    Root.jsx</code></pre>
+<p><strong>Directory Description</strong></p>
+<ul>
+<li><p><strong>src/components/account</strong><br>
+Contains customer pages and components.</p>
+</li>
+<li><p><strong>src/components/blocks</strong><br>
+Contains components used as a construction bricks for pages (mainly used on the home page).</p>
+</li>
+<li><p><strong>src/components/blog</strong><br>
+Blog related components, pages, etc.</p>
+</li>
+<li><p><strong>src/components/footer</strong><br>
+Contains the components used in the footer of the site.</p>
+</li>
+<li><p><strong>src/components/header</strong><br>
+Contains the components used in the header of the site.</p>
+</li>
+<li><p><strong>src/components/home</strong><br>
+Contains two homepage options.</p>
+</li>
+<li><p><strong>src/components/mobile</strong><br>
+Contains the components used in the mobile header and mobile menu.</p>
+</li>
+<li><p><strong>src/components/shared</strong><br>
+Contains components used across all template.</p>
+</li>
+<li><p><strong>src/components/shop</strong><br>
+Contains shop pages (category, product, cart, checkout, etc.) and components.</p>
+</li>
+<li><p><strong>src/components/site</strong><br>
+Contains rest site pages (About Us, Contact Us, etc.).</p>
+</li>
+<li><p><strong>src/components/widgets</strong><br>
+Contains components used in the shop or/and blog sidebar.</p>
+</li>
+</ul>
+<h2 id="store-directory">Store directory</h2>
+<p><code>Sources/src/store</code> contains files related to React Redux: actions, reducers, .etc.</p>
+<p>All actions, reducers are logically separated by &quot;feature&quot;, you can see the structure of this directory below:</p>
+<pre><code class="language-text">store/
+    cart/
+        cartActionTypes.js
+        cartActions.js
+        cartReducer.js
+        index.js
+    compare/
+        ...
+    currency/
+        ...
+    locale/
+        ...
+    mobile-menu/
+        ...
+    quickview/
+        ...
+    wishlist/
+        ...
+    index.js
+    store.js
+    rootReducer.js</code></pre>
+
+
+</div>
+
+            </section>
+        
+            <section class="docs-section" id="section-customization">
+                <h1 class="docs-section__title">Customization</h1>
+
+                <div class="docs-typography">
+    <h2 id="how-to-change-the-logo-">How to change the logo?</h2>
+<ul>
+<li><p>Desktop logo for classic header:</p>
+<ol>
+<li><p>Open the <code>Sources/src/components/header/Header.jsx</code> file.</p>
+</li>
+<li><p>Find <code>&lt;Link to={&#39;/&#39;}&gt;&lt;LogoSvg/&gt;&lt;/Link&gt;</code> and replace <code>&lt;LogoSvg/&gt;</code> with your logo image.</p>
+</li>
+</ol>
+</li>
+<li><p>Desktop logo for compact header:</p>
+<ol>
+<li><p>Open the <code>Sources/src/components/header/NavPanel.jsx</code> file.</p>
+</li>
+<li><p>Find <code>&lt;Link to=&quot;&quot;&gt;&lt;LogoSmallSvg/&gt;&lt;/Link&gt;</code> and replace <code>&lt;LogoSmallSvg/&gt;</code> with your logo image.</p>
+</li>
+</ol>
+</li>
+<li><p>Mobile logo:</p>
+<ol>
+<li><p>Open the <code>Sources/src/components/mobile/MobileHeader.jsx</code> file.</p>
+</li>
+<li><p>Find <code>&lt;Link to=&quot;/&quot; className=&quot;mobile-header__logo&quot;&gt;&lt;LogoSmallSvg/&gt;&lt;/Link&gt;</code> and replace <code>&lt;LogoSmallSvg/&gt;</code> with your logo image.</p>
+</li>
+</ol>
+</li>
+</ul>
+<p>If you want to use a logo image in SVG format, go to the <a href="#section-svg">SVG</a> section to learn how to
+use SVG files as a regular React component.</p>
+<h2 id="how-to-change-font-">How to change font?</h2>
+<ol>
+<li><p>Open the <code>Sources/public/index.html</code> file.</p>
+</li>
+<li><p>Find and replace with the desired font:</p>
+</li>
+</ol>
+<pre><code class="language-html">&lt;!-- fonts --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i&quot;&gt;</code></pre>
+<ol start="3">
+<li><p>Open the <code>Sources/src/scss/_custom-variables.scss</code> file.</p>
+</li>
+<li><p>And define a special variable, as in the example below:</p>
+</li>
+</ol>
+<pre><code class="language-scss">$body-font-family: &#39;YOUR_FONT_NAME&#39;;</code></pre>
+<h2 id="how-to-change-theme-color-scheme-">How to change theme color scheme?</h2>
+<p>The process of changing the theme color scheme is described in the <a href="#section-scss-files">SCSS Files</a> section</p>
+<h2 id="how-to-customize-the-menus-">How to customize the menus?</h2>
+<ul>
+<li><p><strong>Top bar menu</strong></p>
+<p>Top bar menu located in the <code>Sources/src/components/header/Topbar.jsx</code> file.
+Use existing menu as an example to create the menu you want.</p>
+</li>
+<li><p><strong>Departments, Main, Mobile menus</strong></p>
+<p>These menus are generated automatically based on a structured JS array located in:</p>
+<ul>
+<li><code>Sources/src/data/headerDepartments.js</code> for <strong>departments</strong> menu.</li>
+<li><code>Sources/src/data/headerNavigation.js</code> for <strong>main</strong> menu.</li>
+<li><code>Sources/src/data/mobileMenu.js</code> for <strong>mobile</strong> menu.</li>
+</ul>
+<p>Use existing menu as an example to create the menu you want.</p>
+</li>
+</ul>
+<h2 id="how-to-remove-change-copyright-notice-">How to remove/change copyright notice?</h2>
+<ol>
+<li><p>Open the <code>Sources/src/components/footer/Footer.jsx</code>.</p>
+</li>
+<li><p>Find and replace with desired copyright, as in the example below:</p>
+</li>
+</ol>
+<pre><code class="language-jsx">&lt;div className=&quot;site-footer__copyright&quot;&gt;YOUR_COPYRIGHT_NOTICE_HERE&lt;/div&gt;</code></pre>
+
+
+</div>
+
+            </section>
+        
+            <section class="docs-section" id="section-third-party-modules">
+                <h1 class="docs-section__title">Third-Party Packages</h1>
+
+                <div class="docs-typography">
+    <p>This template uses several third-party packages:</p>
+<ul>
+<li><p><strong>React Helmet Async</strong> (<a href="https://github.com/staylor/react-helmet-async" target="_blank">https://github.com/staylor/react-helmet-async</a>)<br>
+Thread-safe Helmet for React 16+ and friends.</p>
+</li>
+<li><p><strong>React Input Range</strong> (<a href="https://github.com/davidchin/react-input-range" target="_blank">https://github.com/davidchin/react-input-range</a>)<br>
+React component for inputting numeric values within a range (range slider).</p>
+</li>
+<li><p><strong>React Intl</strong> (<a href="https://github.com/formatjs/react-intl" target="_blank">https://github.com/formatjs/react-intl</a>)<br>
+Internationalize React apps. This library provides React components and an API to format dates, numbers, and strings,
+including pluralization and handling translations.</p>
+</li>
+<li><p><strong>React Redux</strong> (<a href="https://react-redux.js.org/" target="_blank">https://react-redux.js.org/</a>)<br>
+Official React bindings for Redux.</p>
+</li>
+<li><p><strong>React Router (DOM)</strong> (<a href="https://reacttraining.com/react-router/web" target="_blank">https://reacttraining.com/react-router/web</a>)<br>
+Declarative routing for React.</p>
+</li>
+<li><p><strong>React Router Scroll 4</strong> (<a href="https://github.com/ytase/react-router-scroll" target="_blank">https://github.com/ytase/react-router-scroll</a>)<br>
+React Router scroll management.</p>
+</li>
+<li><p><strong>React Slick</strong> (<a href="https://react-slick.neostack.com/" target="_blank">https://react-slick.neostack.com/</a>)<br>
+React carousel component.</p>
+</li>
+<li><p><strong>React Toastify</strong> (<a href="https://fkhadra.github.io/react-toastify/" target="_blank">https://fkhadra.github.io/react-toastify/</a>)<br>
+React notification made easy.</p>
+</li>
+<li><p><strong>Reactstrap</strong> (<a href="https://reactstrap.github.io/" target="_blank">https://reactstrap.github.io/</a>)<br>
+Simple React Bootstrap 4 components. In fact, only its component <strong>&lt;Modal/&gt;</strong> is used to show product &quot;quick view&quot;.</p>
+</li>
+</ul>
+<p>The following libraries and frameworks are also used:</p>
+<ul>
+<li><p><strong>Bootstrap</strong> (<a href="https://getbootstrap.com/" target="_blank">https://getbootstrap.com/</a>)<br>
+Bootstrap is an open source toolkit for developing with HTML, CSS, and JS.</p>
+</li>
+<li><p><strong>Classnames</strong> (<a href="https://github.com/JedWatson/classnames" target="_blank">https://github.com/JedWatson/classnames</a>)<br>
+A simple javascript utility for conditionally joining classNames together.</p>
+</li>
+<li><p><strong>Redux</strong> (<a href="https://redux.js.org/" target="_blank">https://redux.js.org/</a>)<br>
+Predictable state container for JavaScript apps.</p>
+</li>
+<li><p><strong>Redux Thunk</strong> (<a href="https://github.com/reduxjs/redux-thunk" target="_blank">https://github.com/reduxjs/redux-thunk</a>)<br>
+Thunk middleware for Redux.</p>
+</li>
+<li><p><strong>photoswipe</strong> (<a href="https://photoswipe.com/" target="_blank">https://photoswipe.com/</a>)<br>
+JavaScript gallery, no dependencies. Used on the product page.</p>
+</li>
+</ul>
+
+
+</div>
+
+            </section>
+        
+            <section class="docs-section" id="section-scss-files">
+                <h1 class="docs-section__title">SCSS Files</h1>
+
+                <div class="docs-typography">
+    <p>The directory with SCSS files contains the following files and subdirectories:</p>
+<pre><code class="language-text">scss/
+   blocks/
+   blog/
+   common/
+   components/
+   filters/
+   footer/
+   header/
+   mixins/
+   pages/
+   shop/
+   themes/
+   widgets/
+   _custom.scss
+   _custom-variables.scss
+   _functions.scss
+   _variables.scss
+   style.ltr.scss
+   style.rtl.scss
+   style.scss</code></pre>
+<p>You can make changes to any of these files.</p>
+<p>To make it easier for you in the future to upgrade the template to the new version,
+we recommend (if possible) making changes only to <code>_custom-variables.scss</code> and <code>_custom.scss</code> files.</p>
+<ul>
+<li><code>_custom-variables.scss</code> - It is used to override the values of variables.</li>
+<li><code>_custom.scss</code> - Use to write your own scss code.</li>
+</ul>
+<h2 id="predefined-color-schemes">Predefined color schemes</h2>
+<p>To compile a template with one of the predefined color schemes,
+open the <code>_custom-variables.scss</code> file, then find and uncomment one of the following lines:</p>
+<pre><code class="language-scss">//@import &#39;themes/red&#39;;
+//@import &#39;themes/blue&#39;;
+//@import &#39;themes/black&#39;;
+//@import &#39;themes/green&#39;;</code></pre>
+<p>After that, you need to rebuild the template.</p>
+
+
+</div>
+
+            </section>
+        
+            <section class="docs-section" id="section-ltr-rtl">
+                <h1 class="docs-section__title">LTR/RTL</h1>
+
+                <div class="docs-typography">
+
+<h3 id="how-to-change-direction-">How to change direction?</h3>
+<p>Open <code>src/scss/_custom-variables.scss</code>, and define next variables:</p>
+<pre><code class="language-scss">$direction:       ltr;   // specify the direction you need (ltr or rtl)
+$both-directions: false; // set to false to disable style compilation
+                        // for two directions</code></pre>
+<p>Then open <code>Sources/public/index.html</code> and specify value of the <code>dir</code> attribute (ltr or rtl) for <code>&lt;html&gt;</code> tag:</p>
+<pre><code class="language-html">...
+&lt;html lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;
+...</code></pre>
+<h3 id="how-does-ltr-rtl-support-work-">How does LTR/RTL support work?</h3>
+<p>The direction is controlled using two scss variables:</p>
+<ul>
+<li><code>$direction</code> - indicates direction. Possible values: <code>ltr</code> or <code>rtl</code>.</li>
+<li><code>$both-directions</code> - if <code>true</code> compiles styles for two directions, the <code>$direction</code> variable will be ignored.
+Possible values: <code>true</code> or <code>false</code>.</li>
+</ul>
+<p>Some &quot;magic&quot; variables are also used, which change their value depending on the given direction value.
+The names of these variables are the same as the names of the
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties" target="_blank">Logical Properties</a>
+(for example, variable <code>$margin-inline-start</code>).
+These variables should only be used in the <code>direction</code> mixin.</p>
+<p>This example demonstrates how it works:</p>
+<pre><code class="language-scss">.alert {
+    @include direction {
+        #{$margin-inline-start}: 20px;
+    }
+}</code></pre>
+<p>Will be compiled to:</p>
+<ul>
+<li><p>If <code>$direction == ltr</code> and <code>$both-directions == false</code>:</p>
+<pre><code class="language-css"> .alert {
+     margin-left: 20px;
+ }</code></pre>
+</li>
+<li><p>If <code>$direction == rtl</code> and <code>$both-directions == false</code>:</p>
+<pre><code class="language-css">.alert {
+    margin-right: 20px;
+}</code></pre>
+</li>
+<li><p>If <code>$both-directions == true</code>:</p>
+<pre><code class="language-css">[dir=ltr] .alert {
+    margin-left: 20px;
+}
+[dir=rtl] .alert {
+    margin-right: 20px;
+}</code></pre>
+</li>
+</ul>
+
+</div>
+
+            </section>
+        
+            <section class="docs-section" id="section-svg">
+                <h1 class="docs-section__title">SVG</h1>
+
+                <div class="docs-typography">
+    <p><strong>How to add SVG icon?</strong></p>
+<ol>
+<li><p>Put your file with SVG icon to the <code>Sources/src/svg</code> directory.</p>
+</li>
+<li><p>Open the <code>Sources/src/svg/index.js</code> file and append to the end:</p>
+</li>
+</ol>
+<pre><code class="language-javascript">export {ReactComponent as YOUR_SVG_COMPONENT_NAME} from &#39;./YOUR_SVG_FILE_NAME.svg&#39;;</code></pre>
+<ol start="3">
+<li>Now you can use your svg icon as a regular React component.</li>
+</ol>
+<p>This approach is also described in the official
+<a href="https://facebook.github.io/create-react-app/docs/adding-images-fonts-and-files#adding-svgs" target="_blank">documentation</a>.</p>
+
+
+</div>
+
+            </section>
+        
+            <section class="docs-section" id="section-fonts">
+                <h1 class="docs-section__title">Fonts</h1>
+
+                <div class="docs-typography">
+    <p>We used two fonts in this template:</p>
+<ul>
+<li><p><strong>Roboto</strong> (Google Web Font: <a href="https://fonts.google.com/specimen/Roboto">https://fonts.google.com/specimen/Roboto</a>)
+The main font used in the template.</p>
+</li>
+<li><p><strong>FontAwesome</strong> (<a href="https://fontawesome.com/">https://fontawesome.com/</a>)
+Icon Font to display some icons in the template.</p>
+</li>
+</ul>
+
+
+</div>
+
+            </section>
+        
+            <section class="docs-section" id="section-changelog">
+                <h1 class="docs-section__title">Changelog</h1>
+
+                <div class="docs-typography">
+    <p><strong>Version 1.9.0</strong> – September 1, 2021</p>
+<ul>
+<li>Added: Discount prices in search suggestions;</li>
+<li>Changed: <code>node-sass</code> package replaced with <code>sass</code>;</li>
+<li>Updated: React from <code>17.0.1</code> to <code>17.0.2</code>;</li>
+<li>Updated: Other dependencies.</li>
+</ul>
+<p><strong>Version 1.8.0</strong> – March 13, 2021</p>
+<ul>
+<li>Updated: react-scripts from <code>4.0.0</code> to <code>4.0.3</code>;</li>
+<li>Updated: Bootstrap from <code>4.5.3</code> to <code>4.6.0</code>;</li>
+<li>Updated: Other dependencies.</li>
+</ul>
+<p><strong>Version 1.7.0</strong> – November 19, 2020</p>
+<ul>
+<li>Updated: react-scripts from <code>3.4.1</code> to <code>4.0.0</code>;</li>
+<li>Updated: React from <code>16.13.1</code> to <code>17.0.1</code>.</li>
+<li>Updated: Other dependencies.</li>
+</ul>
+<p><strong>Version 1.6.0</strong> – July 8, 2020</p>
+<ul>
+<li>Added: Next.js version (with server side rendering);</li>
+<li>Fixed: Bug of displaying slides of a react-slick if the infinite property is true and the slides are not enough to
+fill the entire frame;</li>
+<li>Fixed: Cannot read property &#39;version&#39; of null;</li>
+<li>Updated:<ul>
+<li><strong>fontawesome</strong> from <code>5.13.0</code> to <code>5.13.1</code>;</li>
+<li><strong>query-string</strong> from <code>6.12.1</code> to <code>6.13.1</code>;</li>
+<li><strong>react-intl</strong> from <code>4.5.7</code> to <code>5.0.2</code>;</li>
+<li><strong>react-toastify</strong> from <code>6.0.5</code> to <code>6.0.8</code>;</li>
+<li><strong>reactstrap</strong> from <code>8.4.1</code> to <code>8.5.1</code>.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Version 1.5.0</strong> – May 22, 2020</p>
+<ul>
+<li>Added: Working filters;</li>
+<li>Added: Category selector to the search;</li>
+<li>Added: To Top button;</li>
+<li>Added: The ability to change the aspect ratio of the product images;</li>
+<li>Added: Zoom button to the product gallery;</li>
+<li>Changed: Social links moved to a separate component;</li>
+<li>Fixed: Pagination z-index;</li>
+<li>Fixed: Value could not be typed manually to the InputNumber component;</li>
+<li>Fixed: Color swatches are not wrapped to a new line;</li>
+<li>Updated:<ul>
+<li><strong>bootstrap</strong> from <code>4.4.1</code> to <code>4.5.0</code>;</li>
+<li><strong>react</strong> from <code>16.12.0</code> to <code>16.13.1</code>;</li>
+<li><strong>react-helmet-async</strong> from <code>1.0.4</code> to <code>1.0.6</code>;</li>
+<li><strong>react-intl</strong> from <code>3.11.0</code> to <code>4.5.7</code>;</li>
+<li><strong>react-redux</strong> from <code>7.1.3</code> to <code>7.2.0</code>;</li>
+<li><strong>react-router-dom</strong> from <code>5.1.2</code> to <code>5.2.0</code>;</li>
+<li><strong>react-slick</strong> from <code>0.25.2</code> to <code>0.26.1</code>;</li>
+<li><strong>react-toastify</strong> from <code>5.5.0</code> to <code>6.0.5</code>;</li>
+<li><strong>react-scripts</strong> from <code>3.3.0</code> to <code>3.4.1</code>;</li>
+<li><strong>fontawesome</strong> from <code>5.12.0</code> to <code>5.13.0</code>;</li>
+<li><strong>reactstrap</strong> from <code>8.2.0</code> to <code>8.4.1</code>.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Version 1.4.0</strong> – March 5, 2020</p>
+<ul>
+<li>Added: Account menu;</li>
+<li>Added: Order success page;</li>
+<li>Added: Order details page;</li>
+<li>Added: Edit address page;</li>
+<li>Changed: Close the mobile menu when click on the link;</li>
+<li>Fixed: Same height of product cards in the block products carousel;</li>
+<li>Fixed: react-slick bug when dynamically loading slides.</li>
+</ul>
+<p><strong>Version 1.3.0</strong> – January 13, 2020</p>
+<ul>
+<li>Added: <strong>Search suggestions</strong>;</li>
+<li>Changed: <strong>react-helmet</strong> replaced by <strong>react-helmet-async</strong>;</li>
+<li>Fixed: Minor issues related to the menu;</li>
+<li>Updated:<ul>
+<li><strong>fontawesome</strong> from <code>5.11.2</code> to <code>5.12.0</code>;</li>
+<li><strong>bootstrap</strong> from <code>4.3.1</code> to <code>4.4.1</code>;</li>
+<li><strong>node-sass</strong> from <code>4.12.0</code> to <code>4.13.0</code>;</li>
+<li><strong>react</strong>, <strong>react-dom</strong> from <code>16.10.2</code> to <code>16.12.0</code>;</li>
+<li><strong>react-intl</strong> from <code>3.3.2</code> to <code>3.11.0</code>;</li>
+<li><strong>react-redux</strong> from <code>7.1.1</code> to <code>7.1.3</code>;</li>
+<li><strong>react-scripts</strong> from <code>3.2.0</code> to <code>3.3.0</code>;</li>
+<li><strong>react-toastify</strong> from <code>5.4.0</code> to <code>5.5.0</code>;</li>
+<li><strong>reactstrap</strong> from <code>8.0.1</code> to <code>8.2.0</code>;</li>
+<li><strong>redux</strong> from <code>4.0.4</code> to <code>4.0.5</code>;</li>
+<li><strong>eslint-plugin-import</strong> from <code>2.18.2</code> to <code>2.20.0</code>;</li>
+<li><strong>eslint-plugin-react</strong> from <code>7.16.0</code> to <code>7.17.0</code>.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Version 1.2.2</strong> – December 1, 2019</p>
+<ul>
+<li>Fixed: Off canvas filters not showing.</li>
+</ul>
+<p><strong>Version 1.2.1</strong> – November 24, 2019</p>
+<ul>
+<li>Fixed: Mobile menu not showing.</li>
+</ul>
+<p><strong>Version 1.2.0</strong> – October 11, 2019</p>
+<ul>
+<li>Added: <strong>RTL</strong> support;</li>
+<li>Added: Scrolling page up and restoring scroll position after navigation;</li>
+<li>Updated:<ul>
+<li><strong>fontawesome</strong> from <code>5.10.1</code> to <code>5.11.2</code>;</li>
+<li><strong>eslint-plugin-react</strong> from <code>7.14.3</code> to <code>7.16.0</code>;</li>
+<li><strong>react</strong>, <strong>react-dom</strong> from <code>16.9.0</code> to <code>16.10.2</code>;</li>
+<li><strong>react-intl</strong> from <code>3.1.9</code> to <code>3.3.2</code>;</li>
+<li><strong>react-redux</strong> from <code>7.1.0</code> to <code>7.1.1</code>;</li>
+<li><strong>react-router-dom</strong> from <code>5.0.1</code> to <code>5.1.2</code>;</li>
+<li><strong>react-scripts</strong> from <code>3.1.1</code> to <code>3.2.0</code>;</li>
+<li><strong>react-toastify</strong> from <code>5.3.2</code> to <code>5.4.0</code>.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Version 1.1.0</strong> – August 20, 2019</p>
+<ul>
+<li>Added: <strong>Off canvas</strong> filters on the shop page;</li>
+<li>Added: <strong>PhotoSwipe</strong> gallery on the product page;</li>
+<li>Fixed: Unexpected execution of mouse click handlers while dragging the react-slick (now mouse click will be prevented);</li>
+<li>Updated:<ul>
+<li><strong>fontawesome</strong> from <code>5.8.2</code> to <code>5.10.1</code>;</li>
+<li><strong>react</strong>, <strong>react-dom</strong> from <code>16.8.6</code> to <code>16.9.0</code>;</li>
+<li><strong>react-intl</strong> from <code>2.9.0</code> to <code>3.1.9</code>;</li>
+<li><strong>react-redux</strong> from <code>7.0.3</code> to <code>7.1.0</code>;</li>
+<li><strong>react-router-dom</strong> from <code>5.0.0</code> to <code>5.0.1</code>;</li>
+<li><strong>react-scripts</strong> from <code>3.0.1</code> to <code>3.1.1</code>;</li>
+<li><strong>react-slick</strong> from <code>0.24.0</code> to <code>0.25.2</code>;</li>
+<li><strong>react-toastify</strong> from <code>5.2.1</code> to <code>5.3.2</code>;</li>
+<li><strong>reactstrap</strong> from <code>8.0.0</code> to <code>8.0.1</code>;</li>
+<li><strong>redux</strong> from <code>4.0.1</code> to <code>4.0.4</code>;</li>
+<li><strong>eslint-config-airbnb</strong> from <code>17.1.0</code> to <code>18.0.1</code>;</li>
+<li><strong>eslint-plugin-import</strong> from <code>2.17.3</code> to <code>2.18.2</code>;</li>
+<li><strong>eslint-plugin-jsx-a11y</strong> from <code>6.2.1</code> to <code>6.2.3</code>;</li>
+<li><strong>eslint-plugin-react</strong> from <code>7.13.0</code> to <code>7.14.3</code>.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Version 1.0.0</strong> – June 4, 2019</p>
+<ul>
+<li>Initial Release.</li>
+</ul>
+
+
+</div>
+
+            </section>
+        
+            <section class="docs-section" id="section-credits">
+                <h1 class="docs-section__title">Credits</h1>
+
+                <div class="docs-typography">
+    <ul>
+<li>React (<a href="https://reactjs.org/">https://reactjs.org/</a>)</li>
+<li>Bootstrap (<a href="http://getbootstrap.com">http://getbootstrap.com</a>)</li>
+<li>Font Awesome (<a href="https://fontawesome.com/">https://fontawesome.com/</a>)</li>
+<li>Classnames (<a href="https://github.com/JedWatson/classnames">https://github.com/JedWatson/classnames</a>)</li>
+<li>React Helmet Async (<a href="https://github.com/staylor/react-helmet-async">https://github.com/staylor/react-helmet-async</a>)</li>
+<li>React Input Range (<a href="https://github.com/davidchin/react-input-range">https://github.com/davidchin/react-input-range</a>)</li>
+<li>React Intl (<a href="https://github.com/formatjs/react-intl">https://github.com/formatjs/react-intl</a>)</li>
+<li>React Redux (<a href="https://react-redux.js.org/">https://react-redux.js.org/</a>)</li>
+<li>React Router (dom) (<a href="https://reacttraining.com/react-router/web">https://reacttraining.com/react-router/web</a>)</li>
+<li>React Router Scroll 4 (<a href="https://github.com/ytase/react-router-scroll">https://github.com/ytase/react-router-scroll</a>)</li>
+<li>React Slick (<a href="https://react-slick.neostack.com/">https://react-slick.neostack.com/</a>)</li>
+<li>React Toastify (<a href="https://fkhadra.github.io/react-toastify/">https://fkhadra.github.io/react-toastify/</a>)</li>
+<li>Reactstrap (<a href="https://reactstrap.github.io/">https://reactstrap.github.io/</a>)</li>
+<li>Redux (<a href="https://redux.js.org/">https://redux.js.org/</a>)</li>
+<li>Redux Thunk (<a href="https://github.com/reduxjs/redux-thunk">https://github.com/reduxjs/redux-thunk</a>)</li>
+<li>PhotoSwipe (<a href="https://photoswipe.com/">https://photoswipe.com/</a>)</li>
+</ul>
+
+
+</div>
+
+            </section>
+        
+    </div>
+</div>
+</body>
+</html>
