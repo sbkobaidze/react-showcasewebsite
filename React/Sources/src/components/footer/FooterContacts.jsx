@@ -20,10 +20,6 @@ export default function FooterContacts() {
                     {theme.contacts.address}
                 </li>
                 <li>
-                    <i className="footer-contacts__icon far fa-envelope" />
-                    {theme.contacts.email}
-                </li>
-                <li>
                     <i className="footer-contacts__icon fas fa-mobile-alt" />
                     {`${theme.contacts.phone}, ${theme.contacts.phone}`}
                 </li>
